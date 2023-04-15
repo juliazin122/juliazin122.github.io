@@ -1,0 +1,35 @@
+.navbar-nav{
+
+}
+.big-photo{
+background-image: url(banner.jpg);
+height: 400px;
+background-size: cover;
+background-position: 50% 50%;
+color: aliceblue;
+margin-bottom: 50px;
+}
+.img{
+    padding: 20px;
+}
+.i{
+    padding-left: 150px;
+}
+.hut{
+    background-image:linear-gradient(rgba(0, 0, 255, 0.441), rgba(255, 255, 0, 0.477)), url(the-hut-bg.png);
+    height: 300px;
+    color: bisque;
+}
+.hut h2{
+    font-size: 3.5rem;
+}
+.log{
+    background-image: url(the-area.png);
+    height: 300px;
+    color: rgb(173, 236, 187);
+}
+footer{
+    background-color: rgb(154, 154, 154);
+    padding-top:30px ;
+    padding-bottom :30px ;
+}
