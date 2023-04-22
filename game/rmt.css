@@ -1,0 +1,33 @@
+.navbar{
+    font-family: 'Press Start 2P', cursive;
+}
+.nav-link{
+    color: black;
+}
+img{
+    width: 100%;
+}
+.pon{
+    padding-top: 50px;
+padding-bottom: 50px;
+margin-bottom: 30px;
+background-color: rgb(179, 179, 179);
+text-align: center;
+}
+p{
+    padding-top: 60px;
+}
+.row{
+    margin: 50px 0;
+}
+.gg{
+    border-radius: 50%;
+}
+.pon2{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: 30px;
+    background-color: rgb(183, 183, 183);
+    border-radius: 20px;
+    font-family: 'Philosopher', sans-serif;
+}
