@@ -1,0 +1,53 @@
+.nav-link{
+    color: rgb(255, 255, 255);
+}
+img{
+    width: 100%;
+}
+.azaza{
+    width: 180px;
+}
+.navbar{
+    background: linear-gradient(to right,lightblue,white,blue);
+}
+.cord-1 img{
+    width: 40%;
+}
+.card-1{
+    padding: 20px;
+}
+.card-2{
+    border: 1px solid gray;
+    text-align: center;
+    padding: 20px;
+height: 100%;
+}
+.card-2 img{
+    width: 50%;
+}
+.row{
+    margin-top: 5px;
+margin-bottom: 50px;
+}
+.how-it-works{
+    padding: 20px;
+    background: linear-gradient(to bottom,blue,lightblue,white) ;
+}
+.covid{
+    border-radius: 20px;
+    background: linear-gradient(to right bottom,white,blue)
+}
+.list-rooms{
+    list-style-image: url(list-img.png);
+}
+.house{
+    border-radius: 15px;
+    background: linear-gradient(to right bottom,lightblue,blue) 
+}
+footer{
+    padding:30px;
+    background: linear-gradient(to right,blue,lightblue,white);
+}
+footer .row{
+    margin: 0;
+}
