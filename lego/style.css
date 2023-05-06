@@ -1,0 +1,45 @@
+.logo{
+    width: 100px;
+}
+img{
+width: 100%;
+}
+.nav-item{
+    background-color: rgb(160, 82, 82);
+    margin: 7px;
+}
+.nav-link{
+    color: antiquewhite;
+}
+.big-photo{
+    background-image: url(1.jpg);
+   height: 100vh ;
+   margin: 10px;
+   display: flex;
+   align-items: center;
+justify-content: center;
+   color: azure;
+   background-position: 50% 50%;
+  background-size: cover;
+}
+.histori{
+    background-color: rgb(160, 82, 82);
+    text-align: center ;
+    margin-top: 5px
+    ;
+}
+
+.list-group-item{
+    background-color: rgba(160, 82, 82, 0.459);
+
+}
+.lol{
+    background-image: url(4.jpg);
+    margin: 10px;
+    align-items: center;
+    background-position: 50% 50%;
+   background-size: cover;
+   padding-top: 6rem ;
+   padding-bottom: 6rem;
+}
+
