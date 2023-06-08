@@ -1,0 +1,17 @@
+
+[class *=col]{
+    padding: 20px 10px;
+}
+.active{
+    font-weight: 900;
+}
+.gg{
+    width: 250px;
+    padding: 10px;
+}
+img{
+    width: 100%;
+}
+.lok{
+    background-color: rgb(150, 152, 155);
+}

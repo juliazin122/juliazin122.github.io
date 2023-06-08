@@ -1,0 +1,77 @@
+[class *=col]{
+    padding: 20px 10px;
+}
+.active{
+    font-weight: 1000;
+}
+.gg{
+    width: 250px;
+    padding: 10px;
+}
+.ll{
+    width: 400px;
+    padding: 10px;
+}
+img{
+    width: 100%;
+}
+.my-lis{
+    list-style-type: none;
+
+}
+.my-lis li{
+    background-color: rgb(94, 93, 93) ;
+    margin: 25px; 
+    
+    width: 200px;
+    padding: 10px;
+}
+.my-lis a{
+    text-decoration: none;
+color: rgb(235, 235, 235);
+}
+.lok{
+   background-color: rgb(150, 152, 155);
+}
+
+h1{font-family: 'Kurale', serif;
+}
+h2{font-family: 'Kurale', serif;
+}
+p{
+font-family: 'Comfortaa', cursive; 
+font-weight: 700;
+}
+.nav-link{font-family: 'Charis SIL', serif;
+}
+h4{font-family: 'Tinos', serif;
+    text-align: center;
+    font-weight: 900;
+    font-size: 2rem;
+    border-bottom: 1px solid #000;
+}
+ul{font-family: 'Nunito Sans', sans-serif;
+
+}
+/* 
+
+
+font-family: 'Varela Round', sans-serif;
+font-family: 'Playfair Display', serif;
+
+
+font-family: 'Oranienbaum', serif;
+
+font-family: 'Playfair Display SC', serif;
+font-family: 'Poiret One', cursive;
+font-family: 'Rubik Wet Paint', cursive;
+font-family: 'Underdog', cursive;
+font-family: 'Viaoda Libre', cursive;
+
+*/
+body{
+    background-image: url(fon.jpg);
+}
+[class*= col]{
+    background-color: rgba(255, 255, 255, 0.699);
+}
