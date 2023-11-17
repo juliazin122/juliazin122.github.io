@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Леонардо да Вінчі</title>
+   <style>  /* прелоадер */
+         .preloader{
+            background-color: rgb(119, 98, 67);
+            height: 100vh ;
+            position: fixed;
+            width: 100% ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            top: 0;
+            left: 0;
+            transition: 1s;
+            z-index: 100500;
+         }
+         @keyframes anim-preloader {
+            0%{color:rgb(121, 95, 56) ;}
+            25%{color:rgb(74, 61, 41) ;}
+            50%{color:rgb(195, 148, 76) ;}
+            100%{color: rgb(99, 87, 70);}
+         }
+         .preloader h2{
+            animation: anim-preloader 2s infinite alternate ;
+         }
+         body{
+            overflow-y: hidden ;
+         }
+         .lds-spinner {
+  color: brown;
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-spinner div {
+  transform-origin: 40px 40px;
+  animation: lds-spinner 1.2s linear infinite;
+}
+.lds-spinner div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 3px;
+  left: 37px;
+  width: 6px;
+  height: 18px;
+  border-radius: 20%;
+  background: #a8a077;
+}
+.lds-spinner div:nth-child(1) {
+  transform: rotate(0deg);
+  animation-delay: -1.1s;
+}
+.lds-spinner div:nth-child(2) {
+  transform: rotate(30deg);
+  animation-delay: -1s;
+}
+.lds-spinner div:nth-child(3) {
+  transform: rotate(60deg);
+  animation-delay: -0.9s;
+}
+.lds-spinner div:nth-child(4) {
+  transform: rotate(90deg);
+  animation-delay: -0.8s;
+}
+.lds-spinner div:nth-child(5) {
+  transform: rotate(120deg);
+  animation-delay: -0.7s;
+}
+.lds-spinner div:nth-child(6) {
+  transform: rotate(150deg);
+  animation-delay: -0.6s;
+}
+.lds-spinner div:nth-child(7) {
+  transform: rotate(180deg);
+  animation-delay: -0.5s;
+}
+.lds-spinner div:nth-child(8) {
+  transform: rotate(210deg);
+  animation-delay: -0.4s;
+}
+.lds-spinner div:nth-child(9) {
+  transform: rotate(240deg);
+  animation-delay: -0.3s;
+}
+.lds-spinner div:nth-child(10) {
+  transform: rotate(270deg);
+  animation-delay: -0.2s;
+}
+.lds-spinner div:nth-child(11) {
+  transform: rotate(300deg);
+  animation-delay: -0.1s;
+}
+.lds-spinner div:nth-child(12) {
+  transform: rotate(330deg);
+  animation-delay: 0s;
+}
+@keyframes lds-spinner {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.left-window{
+        background-color: #392c10;
+    position: fixed;
+    width: 70%;
+    right: -100%;
+    transition: 0.5s;
+    bottom: 0;
+    height: 200px ;
+    z-index: 600;
+    box-shadow: 0px 0px 5px rgb(115, 99, 70);
+}
+.left-window button{
+    position: absolute;
+    top:10px ;
+    right: 10px;
+    border: none;
+    font-size: 1.5rem;
+    padding: 7px;
+}
+    </style>
+    <style>
+        
+        body {
+            margin: 0;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .portret {
+            max-width: 50%;
+        }
+
+        .screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .one {
+            background: linear-gradient(#290F05, #793c07, #170802);
+            color: #cc9933;
+        }
+
+        .two {
+            background-image: url(world-map.jpg);
+            background-size: cover;
+            background-position: 50% 50%;
+            /* background: linear-gradient(#290f0563, #834d017a,#1708026b); */
+        }
+
+        h2 {
+            color: #432f06;
+            text-shadow: 0px 0px 10px white;
+            font-size: 3rem;
+        }
+
+        h3 {
+            text-align: center;
+
+        }
+
+        .interesting {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .fact {
+            width: 300px;
+            background-color: #d2b48cd8;
+            padding: 30px;
+            margin: 20px;
+            box-shadow: 0px 10px 10px #eadad3;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .three .fact:nth-child(2) {
+            border-radius: 50%;
+            box-shadow: 0px 10px 20px #26ff00;
+        }
+
+        .three .fact:nth-child(1) {
+            border-radius: 20%;
+            box-shadow: 0px -10px 20px #a0007d;
+        }
+
+        .three .fact:nth-child(3) {
+            border-radius: 20%;
+            box-shadow: 0px -10px 20px #5100ff;
+        }
+
+        .three {
+            background: linear-gradient(rgb(14, 12, 13), #793c07, #cc9933);
+            padding-bottom: 50px;
+        }
+
+        .four {
+            padding-bottom: 50px;
+            background: linear-gradient(#cc9933, #793c07, rgb(14, 12, 13));
+        }
+        .five{
+            background: linear-gradient(#290F05, #793c07, #170802);
+        }
+        .five h2{
+            padding: 20px;
+            color: bisque;
+            font-size: 4.5rem;
+            border-bottom: 2px solid bisque;
+            text-shadow: none;
+        }
+        .list{
+            color: #f3d9a7;
+            font-size: 1.2rem;
+        }
+        .list li:nth-child(2n){
+            transform: translateX(-50px);
+            margin: 10px;
+        }
+    </style>
+
+    <style>
+       /* спливаюче вікно */
+    </style>
+</head>
+
+<body>
+    <div class="preloader">
+        <div>
+          
+            <div class="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+        </div>
+    </div>
+    <div class="left-window">
+        <button> x </button>
+        <h3>ТУТ МОГЛА БУТИ ВАША РЕКЛАМА</h3>
+    </div>
+    <div class="screen one">
+        <div class="portret"><img src="image1.jpg" alt=""></div>
+        <h1>Леонардо да Вінчі</h1>
+        <h3>Leonardo da Vinci</h3>
+    </div>
+    <div class="screen two">
+        <h2>Цікаві факти</h2>
+        <div class="interesting">
+            <div class="fact">
+                <p>Був амбідекстром - однаковою мірою <b>добре володів правою і лівою рукою</b> . Кажуть навіть, що він
+                    міг одночасно писати різні тексти різними руками.</p>
+            </div>
+            <div class="fact">
+                <p>Леонардо <b> не мав прізвища</b> в сучасному розумінні; «да Вінчі» означає просто «(родом) з містечка
+                    Вінчі». Повне його ім'я — Леонардо, син пана П'єро з Вінчі (італ. Leonardo di ser Piero da Vinci).
+                </p>
+            </div>
+            <div class="fact">
+                <p>Він був <b> позашлюбною дитиною </b>25-річного заможного флорентійського нотаріуса П'єро Фруозіно ді
+                    Антоніо да Вінчі та селянки Катерини ді Мео Ліппі.</p>
+            </div>
+        </div>
+    </div>
+    <div class="screen three">
+
+        <div class="interesting">
+            <div class="fact">
+                <h3>Парашут</h3>
+                <p>Цей винахід з’явився результатом численних експериментів і спостережень ученого над
+                    поведінкою падаючих картонних фігур різноманітної форми. У 1483 році Леонардо да Вінчі намалював
+                    ескіз пірамідального парашута. </p>
+            </div>
+            <div class="fact">
+                <h3>Розтин</h3>
+                <p>Леонардо був першим з живописців, хто вдавався до розтину трупів для вивчення будови м'язів, адже
+                    вважав науковий підхід основою всього.
+                </p>
+            </div>
+            <div class="fact">
+                <h3>Велосипед</h3>
+                <p>Після смерті геніального італійця в його рукописах дійсно знайшли двоколісний апарат, який ну дуже
+                    нагадує сучасний велосипед. Механізм залишився той самий: передача руху відбувалась через ланцюг з
+                    одного колеса на інше.</p>
+            </div>
+        </div>
+        <h2>Винаходи</h2>
+    </div>
+    <div class="screen four">
+        <h2>Картини</h2>
+        <div class="interesting">
+            <div class="fact">
+                <img src="art1.jpg" alt="">
+                <h3>Пані з горностаєм </h3>
+            </div>
+            <div class="fact">
+                <img src="art3.jpg" alt="">
+                <h3>Portrait of a Musician </h3>
+            </div>
+            <div class="fact">
+                <img src="art2.jpg" alt="">
+                <h3>Прекрасна Ферроньєра </h3>
+            </div>
+        </div>
+    </div>
+    <div class="screen five">
+        <h2>Цитати</h2>
+        <div class="words">
+            <ol class="list">
+                <li>Хто не карає зла, той сприяє йому.</li>
+                <li>Хто в страху живе, той і гине від страху.</li>
+                <li>Хто не цінує життя, той не заслуговує на нього.</li>
+                <li>Противник, який розкриває ваші помилки, набагато корисніший, ніж друг, який приховує їх.</li>
+                <li>Хто може йти до джерела, не повинен йти до глека.</li>
+                <li>Ображаючи іншого, ти не дбаєш про самого себе.</li>
+                <li>Будь-яку перешкоду треба долати завзятістю.</li>
+                <li>Ніщо не можна ані любити, ані ненавидіти, перш ніж не маєш про це ясного уявлення.</li>
+                <li>Там, де бракує розумних доводів, їх замінює крик.</li>
+                <li>Ніщо так не зміцнює авторитет, як мовчання.</li>
+                <li>Той, хто йде за ким-небудь, ніколи не прийде першим.</li>
+                <li>Жалюгідний той учень, який не перевершує свого вчителя.</li>
+            </ol>
+        </div>
+    </div>
+
+ <script>
+    let preload = document.querySelector('.preloader')
+
+    window.onload=function(){
+        setTimeout( ()=>{
+        preload.style.opacity = 0;
+        document.body.style.overflowY ='auto'
+    } , 1000)
+
+    setTimeout( ()=>{
+        preload.style.display = 'none'
+    } , 2000)
+
+
+    }
+
+    let rightW = document.querySelector('.left-window')
+    let rightWindButton = document.querySelector('.left-window button')
+
+
+    setTimeout( ()=>{
+        rightW.style.right = '0px' 
+    }, 3000  )
+
+    rightWindButton.onclick = function (){
+        rightW.style.right = '-100%'
+    }
+ </script>
+    
+</body>
+
+</html>
