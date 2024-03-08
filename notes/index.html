@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            background-color: #FBEAFF;
+        }
+
+        .container {
+            background-color: #845EC2;
+            color: #FBEAFF;
+            margin: 20px;
+            padding: 10px 20px 30px 20px;
+            border-radius: 20px;
+        }
+
+        input {
+            width: 90%;
+            padding: 7px;
+            border: 0;
+            border-radius: 5px;
+        }
+
+        input:focus {
+            outline: 0;
+            box-shadow: 0px 3px 5px rgb(87, 87, 87);
+        }
+
+        input:focus::placeholder {
+            font-weight: 900;
+        }
+
+        h1 {
+            font-family: "Comfortaa", sans-serif;
+        }
+
+        .add-btn {
+            background-color: #00C9A7;
+            border: 0;
+            padding: 5px 30px;
+            color: #FBEAFF;
+            font-weight: 900;
+            border-radius: 5px;
+        }
+
+        .add-btn:hover {
+            box-shadow: 0px 2px 4px rgb(233, 231, 228);
+        }
+
+        .add-btn:active {
+            box-shadow: 0px 2px 10px 5px rgb(233, 231, 228);
+        }
+
+        .p-note {
+            height: 20px;
+            border-bottom: 3px solid #FBEAFF;
+        }
+        .btn-delet{
+            background-color: #ffbcab;
+            border-radius: 5px 9px ;
+            font-weight: 700;
+            border: none;
+            color: #454545;
+            padding: 5px 30px;
+        }
+        .note-item{
+            display: flex;
+            justify-content: space-between;
+            margin: 10px 0;
+            border-bottom: 1px solid rgb(112, 176, 112);
+            padding-bottom: 5px;
+        }
+        .p{
+            color: rgb(255, 255, 255);
+            font-weight: 600;
+            padding: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1> {{title}} </h1>
+        <input type="text" v-bind:placeholder="pidkazka" v-model="note"  v-on:keypress.enter = "addFunction()"
+        v-bind:style="{
+            color:note.length < 10 ? 'navy' :'red',
+            fontStyle: note.length > 10 ? 'italic' :'normal'}"
+        >
+        <p class="p-note">{{note}}</p>
+        <button class="add-btn" v-on:click="addFunction()">Додати</button>
+        <div class="note-wrap">
+            <div class="note-item" v-for="(item, i) in  notesArr" v-if="notesArr.length != 0">
+              <div class="div-notes"> {{i + 1}}. {{item}} </div>
+               <button class="btn-delet" v-on:click="DelFunction(i)" >Видалити</button>
+            </div>
+            <div class="p" v-else>
+                <p>Ви не додали ще жодної нотатки</p>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        let azaza = {
+            data() {
+                return {
+                    title: 'Нотатки',
+                    pidkazka: 'Запишіть свою важливу справу',
+                    note: '',
+                    notesArr: [],
+                }
+            },
+            methods: {
+                addFunction() {
+                    if (this.note != '') {
+                        this.notesArr.push(this.note);
+                        console.log( this.notesArr);
+                        localStorage.setItem('notes', JSON.stringify(this.notesArr) )
+                    }
+                    this.note = '';
+                },
+                DelFunction(i){
+                    this.notesArr.splice(i , 1)
+                    localStorage.setItem('notes', JSON.stringify(this.notesArr) )
+                }
+
+            },
+            mounted(){
+                if(localStorage.getItem('notes') != null){
+                    this.notesArr = JSON.parse(localStorage.getItem('notes'));
+                }
+                
+            }
+        }
+        Vue.createApp(azaza).mount('.container')
+
+
+    </script>
+</body>
+
+</html>
