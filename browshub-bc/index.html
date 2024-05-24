@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Студія краси-Browshub.bc</title>
+    <link rel="shortcut icon" href="face1.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="Browshub.bc.css">
+    <style>
+        .manu {
+            text-align: center;
+            letter-spacing: 1px;
+            font-family: "Ubuntu Sans Mono", monospace;
+        }
+
+        .pon1 {
+            text-align: center;
+            font-family: "Sedan SC", serif;
+
+        }
+
+        .pon {
+            font-family: "Sedan SC", serif;
+            text-align: left;
+        }
+
+        .t {
+            padding-top: 70px;
+            text-align: center;
+            text-shadow: 3px 2px rgba(0, 0, 0, 0.062);
+            font-family: "Sedan SC", serif;
+            color: #402101;
+        }
+
+        .ti {
+
+            text-align: center;
+            text-shadow: 3px 2px rgba(0, 0, 0, 0.062);
+            font-family: "Sedan SC", serif;
+            color: #402101;
+        }
+
+        .pid {
+            background-color: #e7e4de;
+            padding: 30px 0;
+            margin-top: 50px;
+        }
+
+        .ic {
+            font-size: 2rem;
+            color: #000000;
+            margin: 10px;
+        }
+
+        .ic:hover {
+            color: rgb(0, 0, 0);
+        }
+
+        .main-row {
+            border-top: 1px solid #cd8f0a;
+            padding-top: 15px;
+            padding-top: 15px;
+        }
+
+        .tip {
+            text-align: center;
+            padding-bottom: 100px;
+        }
+
+        body {
+            position: relative;
+            height: 100%;
+        }
+
+        body {
+            background: #ffffff;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        swiper-container {
+            width: 100%;
+            height: 60%;
+        }
+
+        @media (max-width: 768px) {
+            swiper-container {
+                /* width: 90%; */
+                height: 90%;
+            }
+        }
+
+        swiper-slide {
+            text-align: center;
+            font-size: 18px;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        swiper-slide img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .posl {
+            background-color: #efefefd8;
+        }
+
+        .manu1 {
+            border: solid 1px #cd8f0a;
+            border-radius: 10px 10px;
+            text-align: center;
+            letter-spacing: 1px;
+            font-family: "Ubuntu Sans Mono", monospace;
+        }
+
+        .ponp {
+            font-family: "Sedan SC", serif;
+            text-align: left;
+        }
+
+        .lok {
+            padding-bottom: 20px
+        }
+
+        .icon {
+            padding: 9px;
+        }
+
+        .karta {
+            color: #312200;
+            transition: 0.1s;
+        }
+
+        .karta:hover {
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .click-div-map {
+            width: 0;
+            height: 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            align-items: center;
+            justify-content: center;
+            z-index: 100500;
+            display: none;
+            background-color: #2b2a2a65;
+        }
+
+        .map-wrap {
+            width: 65%;
+
+            /*animation: map-anim 0.8s;*/
+        }
+
+        @keyframes map-anim {
+            0% {
+                width: 0;
+                height: 0;
+            }
+
+            100% {
+                width: 100%;
+                height: 100vh;
+            }
+        }
+
+        .car-name-list {
+            display: flex;
+            flex-wrap: wrap;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .list-item {
+            border: solid 1px #cd8f0a;
+            border-radius: 10px 10px;
+            margin: 15px;
+            padding: 20px;
+
+        }
+
+        .list-item:hover {
+            cursor: pointer;
+        }
+
+        .active {
+            background-color: #d7ba7c;
+            border: solid 1px #cd8f0a;
+            border-radius: 10px 10px;
+            color: #402101;
+        }
+
+        .car-about {
+            display: flex;
+            margin: 15px;
+            align-items: center;
+        }
+
+        .car-wrap {
+            margin: 10px 0;
+        }
+
+        .poslyg {
+            width: 100%;
+            color: #402101;
+            font-size: 20px;
+            /* height: 50px; */
+            border-bottom: 1px solid #9b9b9b;
+            font-family: "Poetsen One", sans-serif;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .but {
+            background-color: #cbb8a5;
+            border: 1px solid #ceb295;
+            border-radius: 10px 10px;
+            font-family: "Cormorant Garamond", serif;
+        }
+
+        .right {
+            position: fixed;
+            right: 50px;
+            bottom: 90px;
+            /* background-color: #cbb8a5;*/
+            background-color: rgb(245, 245, 245);
+            border-radius: 15px 15px;
+            width: 80px;
+            /* height: 50px; */
+            font-weight: 900;
+            box-shadow: 0px 0px 10px rgb(146, 146, 146);
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 0;
+        }
+
+        .right p {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        a {
+            color: rgb(39, 32, 27);
+            text-decoration: none;
+            font-family: "Cormorant Garamond", serif;
+        }
+
+        .hide-show-img {
+            background-color: #ffffffd8;
+            padding: 50px 0;
+            display: none;
+            height: 0;
+            /* animation:showw  0.5s; */
+        }
+
+        @keyframes showw {
+            0% {
+                /* width: 0; */
+                height: 0;
+            }
+
+            100% {
+                /* width: 100%; */
+                height: auto;
+            }
+        }
+
+        .more-photo-btn {
+            user-select: none;
+            transition: 0.5s;
+
+        }
+
+        .more-photo-btn:hover {
+            cursor: pointer;
+            color: orange;
+            box-shadow: 0px 0px 5px #402101;
+        }
+
+        .foto {
+            height: 300px;
+            margin: 10px;
+        }
+        .dark{
+    background-color: rgb(59, 59, 59);
+    color: rgb(255, 241, 213) ;
+}
+.dark h2, .dark h5, .dark a{
+    color: rgb(255, 241, 213) ;
+
+}
+.dark h6{
+color: #000000;
+}
+label{
+    font-family: "Sedan SC", serif;
+}
+.inp1{
+    background-color: #d2d2d2;
+    border: 2px solid gray;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="click-div-map">
+        <div class="map-wrap">
+            <div class="ratio ratio-16x9">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2575.343209877809!2d30.116027876397432!3d49.79841497147504!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d34219b2da56f9%3A0xab0e7fb936444148!2z0YPQuy4g0JzRj9GB0L3QsNGPLCA5LCDQkdC10LvQsNGPINCm0LXRgNC60L7QstGMLCDQmtC40LXQstGB0LrQsNGPINC-0LHQu9Cw0YHRgtGMLCAwOTEwMA!5e0!3m2!1sru!2sua!4v1715348433031!5m2!1sru!2sua"
+                    style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        
+    </div>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md">
+                    <h2 class="wow animate__animated animate__backInDown t">Студія краси Browshub.bc</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md">
+                    <input type="checkbox" class="inp1 ">
+                    <label for="">Темна тема</label>
+                    <h5 class="wow animate__animated animate__backInDown ti">Адреса вулиця М'ясна, 9, Біла Церква,
+                        Київська область</h5>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md right ">
+                    <a href="https://bumpix.net/uk/browshub">
+                        <h6>Запис</h6>
+                    </a>
+                </div>
+            </div>
+            <div class="row align-items-center">
+                <div class="col-md tip">
+                    <h5 class="wow animate__animated animate__backInDown karta">Показати на карті </h5>
+
+                    <a href="https://www.instagram.com/browshub.bc?igsh=OHJybXA2ZW1oMXNl"><i
+                            class="fa-brands fa-instagram fa-xl icon" style="color: #281501;"></i></a>
+                    <a href="https://www.tiktok.com/@browshub.bc?_t=8mBRfB0Mc7C&_r=1"><i
+                            class="fa-brands fa-tiktok fa-xl icon" style="color: #1c0f01;"></i></a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="container">
+            <div class="row main-row">
+                <div class="col-4">
+                 <a href="#about">  <p class="  wow animate__animated animate__fadeIn manu">Про нас</p></a> 
+                </div>
+                <div class="col-4">
+                <a href="#poslyg">   <p class="wow animate__animated animate__fadeIn manu">Послуги</p></a> 
+              </div>
+                <div class="col-4">
+                 <a href="#photo">   <p class="wow animate__animated animate__fadeIn manu">Фото</p></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <swiper-container class="mySwiper" pagination="true" pagination-clickable="true" slides-per-view="3"
+                    space-between="30" free-mode="true">
+                    <swiper-slide><img src="l briv.png" alt=""></swiper-slide>
+                    <swiper-slide><img src="l briv2.jpg" alt=""></swiper-slide>
+                    <swiper-slide><img src="l viy.jpg" alt=""></swiper-slide>
+                    <swiper-slide><img src="p briv1.jpg" alt=""></swiper-slide>
+                    <swiper-slide><img src="p briv4.jpg" alt=""></swiper-slide>
+                    <swiper-slide><img src="lf briv.jpg" alt=""></swiper-slide>
+                </swiper-container>
+
+            </div>
+        </div>
+
+    </div>
+    </div>
+    <div class="container-fluid" id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md">
+                    <h2 class="wow animate__animated animate__fadeInLeft ti">Про нас</h2>
+                    <h5 class="pon">Гарний зовнішній вигляд — одна зі складових успіху у житті, адже дарує впевненість у
+                        собі та прекрасний настрій.</h5>
+
+                    <h5 class="pon">Наш майстр — справжні професіонал, який використовує у своїй роботі якісні матеріали
+                        провідних виробників, постійно підвищує свою кваліфікацію та дотримуються передових технологій
+                        задля вашої безпеки та комфорту.</h5>
+                    <h5 class="pon">А майстер з оформлення брів та вій допоможе підкреслити ваші природні риси та
+                        зробити їх більш яскравими.</h5>
+                    <h5 class="ponp">А затишний простір, зі стильним сучасним інтер'єром.</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid posl">
+        <div class="container">
+            <div class="row">
+                <div class="col-md ti lok py-4">
+                    <h2 class="wow animate__animated animate__fadeInLeft " id="poslyg"> Послуги</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md">
+                    <div id="vue-cont">
+                        <div class="car-name">
+                            <ul class="car-name-list">
+                                <li v-for="(item, index) in cars" v-on:click="showCar(index)"
+                                    v-bind:class="{active: currentIndex ==  index}" class="list-item">
+                                    {{item.log}}
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="car-wrap">
+                            <div class="name poslyg" v-for="(item, i) in currentCar">
+                                <div> {{ item}} </div>
+                                <div> <a href="https://bumpix.net/uk/browshub">
+                                        <button class="but">Вибрати</button></a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+
+    <div class="hide-show-img">
+        <div class="text-center">
+
+            <h3>Фото</h3>
+            <img data-fancybox="gallery" class="foto " src="maistr1.jpg" alt="">
+            <img data-fancybox="gallery" class="foto " src="l briv.png" alt="">
+            <img data-fancybox="gallery" class="foto " src="l briv2.jpg" alt="">
+            <img data-fancybox="gallery" class="foto " src="l viy.jpg" alt="">
+            <img data-fancybox="gallery" class="foto " src="lf briv.jpg" alt="">
+            <img data-fancybox="gallery" class="foto " src="f briv.jpg" alt="">
+            <img data-fancybox="gallery" class="foto " src="p briv1.jpg" alt="">
+            <img data-fancybox="gallery" class="foto " src="p briv2.jpg" alt="">
+            <img data-fancybox="gallery" class="foto " src="p briv3.jpg" alt="">
+            <img data-fancybox="gallery" class="foto " src="p briv4.jpg" alt="">
+            <img data-fancybox="gallery" class="foto " src="p briv5.jpg" alt="">
+            <img data-fancybox="gallery" class="foto " src="sertuf.jpg" alt="">
+        </div>
+        <div class="text-center">
+            <h3>ВІдео</h3>
+            <video controls data-fancybox="gallery2" class="foto " src="p briv1.mp4" alt=""></video>
+            <video controls data-fancybox="gallery2" class="foto " src="p briv2.mp4" alt=""></video>
+            <video controls data-fancybox="gallery2" class="foto " src="p briv3.mp4" alt=""></video>
+            <video controls data-fancybox="gallery2" class="foto " src="r briv2.mp4" alt=""></video>
+            <video data-fancybox="gallery2" class="foto " controls src="sertif.mp4" alt=""></video>
+        </div>
+        <button class="btn-hide-img btn btn-danger">Приховати</button>
+
+    </div>
+    <div class="footer pid">
+        <div class="container">
+            <div class="row ">
+                <div class="col-sm-6">
+                    <a href="https://www.instagram.com/browshub.bc?igsh=OHJybXA2ZW1oMXNl"> <i
+                            class="fa-brands fa-instagram fa-bounce fa-2xl icon" style="color: #000000;"></i></a>
+                    <a href="https://www.tiktok.com/@browshub.bc?_t=8mBRfB0Mc7C&_r=1"> <i
+                            class="fa-brands fa-tiktok fa-bounce fa-2xl icon" style="color: #000000;"></i></a>
+                </div>
+                <div class="col-sm-6 text-md-end">
+                    <p><i class="fa-solid fa-copyright me-2"></i></p>
+                    <button class="btn btn-secondary more-photo-btn" id="photo">Більше фото</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/82aeee632a.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        let morePhotoBtn = document.querySelector('.more-photo-btn');
+        let hideShowImg = document.querySelector('.hide-show-img');
+        let btnHideImg = document.querySelector('.btn-hide-img')
+
+
+        let checkDark = document.querySelector('.inp1');
+
+checkDark.oninput = function (){
+    document.body.classList.toggle('dark');
+}
+
+        morePhotoBtn.onclick = () => {
+            hideShowImg.style.display = 'block';
+            hideShowImg.style.animation = 'showw  0.5s';
+            setTimeout(() => {
+                hideShowImg.style.height = 'auto'
+            }, 500);
+
+        }
+        btnHideImg.onclick = () => {
+            hideShowImg.style.animation = 'none';
+            hideShowImg.style.height = 0;
+            hideShowImg.style.display = 'none';
+
+        }
+
+
+
+
+        let pMap = document.querySelector('.karta');
+        let divMap = document.querySelector('.click-div-map');
+
+        function showMap() {
+            divMap.style.display = 'flex';
+            divMap.style.animation = 'map-anim 0.8s';
+            divMap.style.width = '100%';
+            divMap.style.height = '100vh'
+
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${window.scrollY}px`;
+
+
+        }
+        pMap.addEventListener('click', showMap);
+
+        divMap.onclick = () => {
+            divMap.style.display = 'none';
+
+            document.body.style.position = '';
+            document.body.style.top = '';
+        }
+
+
+        let carrData = [
+            {
+                log: 'Всі',
+                name: 'Подарункові сертифікати ',
+                model: 'Перманент брів 1600грн',
+                year: 'Фарбування та корекція брів 350грн',
+                color: 'Ламінування фарбування та корекція брів 500грн',
+                price: 'Ламінування вій+ботокс 450грн',
+                image: 'Ламінування+корекція брів 400грн',
+            },
+            { log: 'Брів', name: 'Подарункові сертифікати ', model: 'Перманент брів 1600грн', year: 'Фарбування та корекція брів 350грн', price: 'Ламінування фарбування та корекція брів 500грн', color: 'Ламінування+корекція брів 400грн', },
+            { log: 'Вії', name: 'Ламінування вій + ботокс 450грн', },
+            { log: 'Курс Бровіст з нуля', name: '- 2 дні навчання', model: '- 4 години тільки цінної теорії', year: '- 5 самостійних відпрацюваннь на моделях', price: '- створення контенту для соц мереж', color: '-правильне ведення соц. мереж', dal: '-сертифікат по закінченню навчання ', mag: '🎁В подарунок доступ до мого закритого телеграм каналу, де ще більше інформації для роботи Також підтримка після навчання 24/7 За деталями писати в direct inst: browshub.bc', },
+            { log: 'Курс Ламінування брів', name: '-триває 1 день ', model: '-2 години теорії', year: '-3 відпрацювання на моделях', price: 'На курсі Ви навчитесь моєї авторської техніки фарбування брів після ламінування без затемнення, швидко та якісно виконувати цю процедуру 🔥', color: 'Розберемо всі протипоказання та будемо знайомитися з хімічними складами різних виробників препаратів для ламінування брів та вій 🔥', mag: ' За деталями писати в direct inst: browshub.bc', },
+
+        ]
+
+        let carrApp = {
+            data() {
+                return {
+                    cars: carrData,
+                    currentCar: carrData[0],
+                    currentIndex: 0,
+                }
+            },
+            methods: {
+                showCar(index) {
+                    this.currentCar = carrData[index];
+                    this.currentIndex = index;
+                    console.log(this.currentCar);
+                }
+            },
+        }
+        Vue.createApp(carrApp).mount('#vue-cont')
+    </script>
+</body>
+
+</html>
